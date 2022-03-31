@@ -7,10 +7,10 @@
 <ui:composition template="layout.xhtml">
     <ui:define name="content">
         <h:form id="form">
-            <p:panel header="Products List">
+            <p:panel header="Produkte">
                 <p:dataTable id="table" var="product" value="#{productList.products}">
                     <p:column>
-                        <f:facet name="header"># Id</f:facet>
+                        <f:facet name="header">ID</f:facet>
                         <h:outputText value="#{product.id}"/>
                     </p:column>
 
@@ -20,9 +20,9 @@
                     </p:column>
 
                     <p:column>
-                        <f:facet name="header">Price</f:facet>
+                        <f:facet name="header">Preis</f:facet>
                         <h:outputText value="#{product.price}">
-                            <f:convertNumber type="currency" currencySymbol="$ "/>
+                            <f:convertNumber type="currency" currencySymbol="€ "/>
                         </h:outputText>
                     </p:column>
                 </p:dataTable>

@@ -6,13 +6,13 @@
 <ui:composition template="layout.xhtml">
     <ui:define name="content">
         <h:form id="productForm">
-            <p:panel header="Product Details">
+            <p:panel header="Produkt erstellen">
                 <h:panelGrid columns="1">
 
                     <p:outputLabel for="name" value="Name: "/>
                     <p:inputText id="name" value="#{productController.product.name}"/>
 
-                    <p:outputLabel for="price" value="Price: "/>
+                    <p:outputLabel for="price" value="Preis: "/>
                     <p:inputNumber id="price" value="#{productController.product.price}"/>
 
                     <h:commandButton value="Save" action="#{productController.save}"/>
