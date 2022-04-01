@@ -2,7 +2,6 @@ package de.mydomain;
 
 import org.ocpsoft.rewrite.annotation.Join;
 import org.ocpsoft.rewrite.el.ELBeanName;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -12,10 +11,13 @@ import org.springframework.stereotype.Component;
 @Join(path = "/product", to = "/product-form.jsf")
 public class ProductController {
 
-    @Autowired
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
 
     private Product product = new Product();
+
+    public ProductController(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
 
     public String save() {
         productRepository.save(product);

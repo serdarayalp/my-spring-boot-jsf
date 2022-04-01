@@ -16,10 +16,14 @@ import java.util.List;
 @ELBeanName(value = "productList")
 @Join(path = "/", to = "/product-list.jsf")
 public class ProductListController {
-    @Autowired
-    private ProductRepository productRepository;
+
+    private final ProductRepository productRepository;
 
     private List<Product> products;
+
+    public ProductListController(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
 
 
     /* Beachten Sie, dass dieser Controller eine Methode namens loadData hat, die mit @Deferred, @RequestAction und @IgnorePostback annotiert ist. Diese Annotationen werden benötigt, um die Sammlung von Produkten zu laden, bevor die Schnittstelle gerendert wird. Wir könnten diese Sammlung auch in getProducts laden, aber das würde den Prozess des Renderings verlangsamen, da diese Methode im JSF-Lebenszyklus sehr oft aufgerufen wird. */
