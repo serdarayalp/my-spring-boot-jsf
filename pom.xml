@@ -9,12 +9,12 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <rewrite-servlet.version>3.5.1.Final</rewrite-servlet.version>
+        <rewrite-servlet.version>3.4.1.Final</rewrite-servlet.version>
         <primefaces.version>11.0.0</primefaces.version>
         <lombok.version>1.18.22</lombok.version>
         <myfaces-impl.version>2.2.12</myfaces-impl.version>
-        <flyway-core.version>8.5.4</flyway-core.version>
-        <hsqldb.version>2.6.1</hsqldb.version>
+        <flyway-core.version>4.1.2</flyway-core.version>
+        <hsqldb.version>2.3.4</hsqldb.version>
     </properties>
 
     <!-- Voreinstellungen von Spring Boot erben -->
