@@ -11,16 +11,16 @@ import org.springframework.stereotype.Component;
 @Join(path = "/product", to = "/product-form.jsf")
 public class ProductController {
 
-    private final ProductRepository productRepository;
+    private final ProductService productService;
 
     private Product product = new Product();
 
-    public ProductController(ProductRepository productRepository) {
-        this.productRepository = productRepository;
+    public ProductController(ProductService productService) {
+        this.productService = productService;
     }
 
     public String save() {
-        productRepository.save(product);
+        productService.save(product);
         product = new Product();
         return "/product-list.xhtml?faces-redirect=true";
     }

@@ -5,7 +5,6 @@ import org.ocpsoft.rewrite.annotation.RequestAction;
 import org.ocpsoft.rewrite.el.ELBeanName;
 import org.ocpsoft.rewrite.faces.annotation.Deferred;
 import org.ocpsoft.rewrite.faces.annotation.IgnorePostback;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -17,12 +16,12 @@ import java.util.List;
 @Join(path = "/", to = "/product-list.jsf")
 public class ProductListController {
 
-    private final ProductRepository productRepository;
+    private final ProductService productService;
 
     private List<Product> products;
 
-    public ProductListController(ProductRepository productRepository) {
-        this.productRepository = productRepository;
+    public ProductListController(ProductService productService) {
+        this.productService = productService;
     }
 
 
@@ -31,7 +30,7 @@ public class ProductListController {
     @RequestAction
     @IgnorePostback
     public void loadData() {
-        products = productRepository.findAll();
+        products = productService.findAll();
     }
 
     public List<Product> getProducts() {
