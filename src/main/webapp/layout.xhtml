@@ -18,8 +18,29 @@
                 <p:toolbar>
                     <f:facet name="left">
                         <p:button href="/" value="Produkte"/>
-                        <p:spacer width="10" />
+                        <p:spacer width="10"/>
                         <p:button href="/product" value="Produkt erstellen"/>
+                    </f:facet>
+                    <f:facet name="right">
+                        <span>Willkommen <b>#{productList.user.username}</b></span>
+                        <p:spacer width="10"/>
+                        <h:form>
+                            <p:commandButton actionListener="#{productList.logout()}" value="Abmelden"/>
+
+                            <p:spacer width="10"/>
+                            <p:commandButton type="button" value="UserDetails" onclick="PF('userWidgetVar').show()"/>
+                            <p:dialog header="User Details"
+                                      widgetVar="userWidgetVar"
+                                      minHeight="100" width="700"
+                                      showEffect="fade">
+                                <span><b>Email</b>: #{productList.user.emailId}</span><br />
+                                <span><b>Vorname</b>: #{productList.user.firstname}</span><br />
+                                <span><b>Nachname</b>: #{productList.user.lastname}</span><br />
+                                <span><b>RealmName</b>: #{productList.user.realmName}</span><br />
+                                <span><b>Rollen</b>: #{productList.user.roles}</span>
+                            </p:dialog>
+
+                        </h:form>
                     </f:facet>
                 </p:toolbar>
             </div>
