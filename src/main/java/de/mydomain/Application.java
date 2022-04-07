@@ -1,4 +1,5 @@
 package de.mydomain;
+
 import org.ocpsoft.rewrite.servlet.RewriteFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
